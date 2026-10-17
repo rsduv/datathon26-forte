@@ -10,7 +10,7 @@ vdir, lab, ddir = sys.argv[1:4]
 ths = [float(x) for x in (sys.argv[4] if len(sys.argv) > 4 else "0,1,1.5,2,3").split(",")]
 DUP = {"X-47": "X-4", "X-48": "X-5"}
 truth = {}
-for name, ts, _ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
+for name, ts, *_ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
     k = DUP.get(name.replace("Х", "X"), name.replace("Х", "X"))
     truth.setdefault(k, [])
     if ts:

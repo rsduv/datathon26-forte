@@ -12,7 +12,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 vdir, lab, ddir = sys.argv[1:4]
 DUP = {"X-47": "X-4", "X-48": "X-5"}
 truth = {}
-for name, ts, _ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
+for name, ts, *_ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
     k = DUP.get(name.replace("Х", "X"), name.replace("Х", "X"))
     truth.setdefault(k, False)
     truth[k] = truth[k] or bool(ts)

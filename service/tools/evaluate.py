@@ -20,7 +20,7 @@ vdir, lab, ddir = sys.argv[1:4]
 DUP = {"X-47": "X-4", "X-48": "X-5"}          # одинаковые видео с разными метками
 
 truth = {}
-for name, ts, _ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
+for name, ts, *_ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
     k = name.replace("Х", "X")
     t = None
     if ts:

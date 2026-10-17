@@ -9,7 +9,7 @@ vdir, lab = sys.argv[1:3]
 out = sys.argv[3] if len(sys.argv) > 3 else "eval_service.json"
 DUP = {"X-47": "X-4", "X-48": "X-5"}
 truth = {}
-for name, ts, _ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
+for name, ts, *_ in list(openpyxl.load_workbook(lab).active.iter_rows(values_only=True))[1:]:
     k = DUP.get(name.replace("Х", "X"), name.replace("Х", "X"))
     truth.setdefault(k, [])
     if ts:

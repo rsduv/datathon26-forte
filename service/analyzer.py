@@ -83,15 +83,18 @@ def read_frames(path, sample_fps=SAMPLE_FPS):
 
 # что обвести на кадре-доказательстве, если правило само не дало рамки (классы детектора)
 HIGHLIGHT = {"computer_unlocked": {"laptop"}, "outsider": {"person"}, "short_visit": {"person"}}
-BOX_COLOR = (40, 40, 230)   # BGR: красный
+BOX_COLOR = (40, 40, 230)   # BGR: красный — предмет нарушения
+PERSON_COLOR = (0, 165, 255)   # BGR: оранжевый — кассир в момент ухода
+LEAVE_TYPES = {"computer_unlocked", "hasty_exit", "left_unattended"}
 
 
-def draw_boxes(img, boxes):
+def draw_boxes(img, boxes, people=()):
     out = img.copy()
     h, w = out.shape[:2]
     th = max(2, round(min(h, w) / 160))
-    for x1, y1, x2, y2 in boxes:
-        cv2.rectangle(out, (int(x1 * w), int(y1 * h)), (int(x2 * w), int(y2 * h)), BOX_COLOR, th)
+    for color, bs in ((PERSON_COLOR, people), (BOX_COLOR, boxes)):
+        for x1, y1, x2, y2 in bs:
+            cv2.rectangle(out, (int(x1 * w), int(y1 * h)), (int(x2 * w), int(y2 * h)), color, th)
     return out
 
 
@@ -169,13 +172,15 @@ def analyze(path, deadline=None):
     violations = []
     for e in events:
         rule = RULES[e.type]
-        ts = e.evidence_t or [e.t]
+        ts = list(dict.fromkeys(round(t, 1) for t in (e.evidence_t or [e.t])))   # без повторов одного кадра
         evidence = []
         for t in ts[:3]:
             f = by_t.get(round(t, 3)) or nearest(t)
             i = frames.index(f)
-            boxes = evidence_boxes(e, f.t, dets[i] if i < len(dets) else [], f.img, table, laptop)
-            img = draw_boxes(f.img, boxes) if boxes else f.img
+            det_i = dets[i] if i < len(dets) else []
+            boxes = evidence_boxes(e, f.t, det_i, f.img, table, laptop)
+            people = [d["box"] for d in det_i if d["label"] == "person" and d["score"] >= 0.9] if e.type in LEAVE_TYPES else []
+            img = draw_boxes(f.img, boxes, people) if boxes or people else f.img
             evidence.append({"timestamp_sec": round(f.t, 1), "image_base64": jpeg_b64(img)})
         violations.append({
             "type": rule["title"],

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Проверка кассовой дисциплины</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23a31551'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='700' font-size='19' fill='white' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
 <style>
   :root {
     /* фирменные цвета ForteBank (сняты с forte.kz) */
@@ -33,6 +33,7 @@
   .bar { max-width:1280px; margin:0 auto; padding:12px 16px; display:flex; align-items:center; gap:12px; }
   .logo { width:34px; height:34px; border-radius:10px; background:var(--accent); color:#fff;
           display:grid; place-items:center; font-weight:800; font-size:18px; flex:none; }
+  .flogo { display:block; color:var(--accent); flex:none; }
   .brand b { font-size:1.1rem; font-weight:800; color:var(--accent); }
   .brand span { color:var(--muted); font-size:.85rem; }
   .bar .pill { margin-left:auto; display:flex; align-items:center; gap:6px; font-size:.8rem; font-weight:600;
@@ -96,6 +97,33 @@
   .player, #pending, #result, .viol { scroll-margin-top:72px; }
 
   .player video { width:auto; max-width:100%; max-height:62vh; min-width:200px; background:#000; border-radius:14px; display:block; margin:0 auto; }
+  .vwrap { position:relative; width:fit-content; max-width:100%; margin:0 auto; }
+  .scan { position:absolute; inset:0; border-radius:14px; overflow:hidden; pointer-events:none;
+          background:linear-gradient(180deg, rgba(163,21,81,.10), rgba(74,2,33,.22)); }
+  .scan i { position:absolute; width:26px; height:26px; border:3px solid #fff; opacity:.9; animation:corner 1.6s ease-in-out infinite; }
+  .scan .c1 { top:12px; left:12px; border-right:0; border-bottom:0; border-radius:8px 0 0 0; }
+  .scan .c2 { top:12px; right:12px; border-left:0; border-bottom:0; border-radius:0 8px 0 0; }
+  .scan .c3 { bottom:12px; left:12px; border-right:0; border-top:0; border-radius:0 0 0 8px; }
+  .scan .c4 { bottom:12px; right:12px; border-left:0; border-top:0; border-radius:0 0 8px 0; }
+  @keyframes corner { 50% { transform:scale(.88); opacity:.6; } }
+  .scan .beam { position:absolute; left:0; right:0; height:70px; top:-70px;
+                background:linear-gradient(180deg, transparent, rgba(255,90,160,.28) 70%, #ff4d9a 96%, transparent);
+                box-shadow:0 8px 24px rgba(255,77,154,.5); animation:beam 2.2s cubic-bezier(.45,0,.55,1) infinite; }
+  @keyframes beam { 0% { top:-70px; } 100% { top:100%; } }
+  .slabel { position:absolute; left:50%; bottom:22px; transform:translateX(-50%); background:rgba(29,29,29,.78); color:#fff;
+            border-radius:99px; padding:6px 14px; font-size:.8rem; font-weight:700; white-space:nowrap; display:flex; gap:8px; align-items:center; }
+  .slabel em { width:8px; height:8px; border-radius:50%; background:#ff4d9a; display:block; animation:blink 1s infinite; }
+  @keyframes blink { 50% { opacity:.2; } }
+
+  /* появление результата */
+  @keyframes rise { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  @keyframes pop { 0% { transform:scale(0); } 70% { transform:scale(1.3); } 100% { transform:scale(1); } }
+  .reveal .verdict, .reveal .stats, .reveal .viol { animation:rise .45s ease both; }
+  .reveal .stats { animation-delay:.08s; }
+  .mark.pop { animation:pop .45s ease both; }
+  @media (prefers-reduced-motion:reduce) {
+    .scan .beam, .scan i, .slabel em, .reveal .verdict, .reveal .stats, .reveal .viol, .mark.pop, .steps li.now .dot { animation:none !important; }
+  }
   .vwarn { font-size:.85rem; color:var(--muted); margin-top:8px; text-align:center; }
   .tools { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-top:12px; }
   .tbtn { display:inline-flex; align-items:center; gap:5px; border:0; background:var(--panel); color:var(--ink);
@@ -188,6 +216,14 @@
   .norm { margin-top:10px; background:var(--panel); border-radius:12px; padding:9px 12px; font-size:.88rem; display:flex; gap:8px; }
   .norm svg { color:var(--accent); margin-top:2px; }
   .norm b { color:var(--accent-dark); }
+  .lawlinks { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+  .lawlinks a { border-radius:999px; padding:4px 10px 4px 8px; text-decoration:none; transition:.15s; }
+  .lawlinks a .i { width:14px; height:14px; }
+  .lawlinks a .ext { opacity:.6; font-size:.7rem; margin-left:2px; }
+  .lawlinks a, .lawchip { display:inline-flex; align-items:center; gap:4px; font-size:.78rem; font-weight:700; color:var(--accent);
+               text-decoration:none; background:#fff; border:1px solid color-mix(in srgb, var(--accent) 30%, #fff); border-radius:8px; padding:3px 9px; }
+  .lawlinks a:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .lawchip { align-self:flex-start; font-size:.75rem; }
   .frames { display:grid; grid-template-columns:repeat(auto-fill, minmax(130px, 1fr)); gap:8px; margin-top:12px; }
   .frames figure { margin:0; position:relative; }
   .frames img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:12px; cursor:zoom-in; display:block; transition:.15s; }
@@ -209,7 +245,7 @@
   .tcard { border-radius:22px; padding:18px; background:linear-gradient(160deg, color-mix(in srgb, var(--c) 13%, #fff), #fff 75%);
            box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px; }
   .tcard .vicon { background:#fff; box-shadow:var(--shadow); }
-  .tcard b { font-size:1rem; line-height:1.3; }
+  .tcard b { font-size:1rem; line-height:1.3; flex:1; }
   .tcard p { margin:0; color:#555; font-size:.88rem; flex:1; }
   .tcard small { color:var(--accent-dark); font-weight:600; font-size:.75rem; background:rgba(255,255,255,.8); border-radius:8px; padding:3px 8px; align-self:flex-start; }
   .principle { margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--muted); font-size:.85rem; }
@@ -245,62 +281,196 @@
     .types h2 { font-size:1.35rem; }
     .chip { font-size:.78rem; padding:6px 10px; }
   }
+
+  /* ===== v2: тёмная «диспетчерская» ===== */
+  :root { --accent:#e0367f; --accent-dark:#ffd6e7; --accent-soft:#2b1420; --bg:#0d090b; --panel:#1b1317; --ink:#f4eef1;
+          --muted:#a6979e; --line:#30242a; --ok:#3ecf8e; --ok-soft:#0e2a1f; --bad:#ff5b6b; --bad-soft:#2e1216;
+          --shadow:0 0 0 1px #2a1f25, 0 10px 30px rgba(0,0,0,.45); --surface:#151012; }
+  body { background:radial-gradient(1200px 500px at 85% -10%, rgba(224,54,127,.18), transparent 60%), var(--bg); }
+  header { background:rgba(13,9,11,.85); backdrop-filter:blur(8px); border-bottom-color:var(--line); }
+  .bar .pill { background:var(--ok-soft); }
+  .hero { background:radial-gradient(circle at 85% 15%, rgba(224,54,127,.35), transparent 45%), linear-gradient(135deg, #1a0c14, #250d1a 60%, #160a10); box-shadow:var(--shadow); }
+  .hero::before { border-color:rgba(224,54,127,.18); } .hero::after { border-color:rgba(224,54,127,.12); }
+  .hero h1 { color:#fff; } .hero .lead { color:#d9cdd3; }
+  .eyebrow { background:#24151c; } .chip { background:rgba(255,255,255,.06); color:#f1e6eb; }
+  .upload, .card, .stat, .viol, .tip, .hintcard, .principle span { background:var(--surface); }
+  .upload { box-shadow:0 0 0 1px #3a2530, 0 20px 50px rgba(224,54,127,.15); }
+  .drop { border-color:#3a2a32; background:#1b1317; } .drop .dicon { background:#24161d; }
+  .tbtn, .fchip, .dbtn, .linkbtn, .share input, .lawlinks a, .lawchip, .kbd kbd { background:#1f171b; color:var(--ink); border-color:var(--line); }
+  .linkbtn, .lawlinks a, .lawchip { color:var(--accent); border-color:#4a2536; }
+  .tbtn.on, .fchip.on { background:var(--accent); color:#fff; }
+  .lawlinks a:hover { background:var(--accent); color:#fff; }
+  .vicon, .tc { background:color-mix(in srgb, var(--c) 22%, #151012); color:color-mix(in srgb, var(--c) 45%, #fff); }
+  .tc:hover { color:#fff; }
+  .viol { border-left-color:color-mix(in srgb, var(--c) 70%, #fff); }
+  .tcard { background:linear-gradient(160deg, color-mix(in srgb, var(--c) 26%, #151012), #151012 75%); }
+  .tcard .vicon { background:#1f171b; } .tcard p { color:var(--muted); }
+  .mark { box-shadow:0 0 0 3px #151012, 0 0 14px color-mix(in srgb, currentColor 0%, rgba(224,54,127,.6)); }
+  .tl-track, .ptrack, .rtrack { background:#2a2025; } .tl-played { background:#5a3346; } .tl-head { background:#fff; }
+  .norm { background:#1f171b; } .desc .lbl { color:#c8b5be; }
+  .verdict.ok { box-shadow:0 0 0 1px rgba(62,207,142,.35); } .verdict.bad { box-shadow:0 0 0 1px rgba(255,91,107,.35); }
+  .steps li .dot { border-color:#3a2a32; }
+  footer { color:#7d6d75; }
+
+
+  /* --- правки капитана: заголовок меньше, баннер выше, зона загрузки крупнее, шрифт как у forte.kz --- */
+  body { font-weight:400; }
+  h1, h2, .hero h1, .types h2 { font-weight:700 !important; letter-spacing:-.01em; }
+  b, strong { font-weight:600; }
+  .hero { min-height:340px; align-items:center; padding:48px 44px; }
+  .hero h1 { font-size:1.9rem; line-height:1.2; margin:0; max-width:24ch; }
+  .drop:not(.compact) { min-height:190px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .drop:not(.compact) .dicon { width:64px; height:64px; border-radius:18px; }
+  .drop:not(.compact) .dicon svg { width:30px; height:30px; }
+  .upload .btn { margin-top:14px; }
+  /* ссылки на законы в карточках: серые по умолчанию, проявляются только при наведении на саму ссылку */
+  .tcard .lawchip { align-self:stretch; display:flex; align-items:center; justify-content:flex-start; gap:6px;
+    width:calc(100% + 16px); margin-left:-8px; box-sizing:border-box; padding:5px 8px;
+    background:transparent; border:1px solid transparent; border-radius:10px; text-decoration:none;
+    color:var(--muted); font-weight:600; font-size:.74rem; white-space:nowrap; overflow:hidden; transition:.15s; }
+  .tcard .lawchip span { overflow:hidden; text-overflow:ellipsis; }
+  .tcard .lawchip .lk { width:14px; height:14px; flex:none; opacity:.7; }
+  .tcard .lawchip:hover, .tcard .lawchip:focus-visible { color:var(--accent); border-color:#4a2536; background:rgba(224,54,127,.06); }
+  .tcard .lawchip:hover .lk { opacity:1; }
+  @media (max-width: 760px) { .hero { min-height:0; padding:24px 18px; } .hero h1 { font-size:1.45rem; } .drop:not(.compact) { min-height:150px; } }
+  .drop.has-file { min-height:0; padding:12px; cursor:default; align-items:stretch; }
+  .drop.has-file .dicon { display:none; }
+  .preview { width:100%; }
+  .preview video { display:block; width:100%; max-height:300px; object-fit:contain; background:#000; border-radius:12px; pointer-events:none; }
+  .pvbar { display:flex; align-items:center; gap:8px; margin-top:10px; font-size:.82rem; color:var(--muted); text-align:left; }
+  .pvbar span { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .pvbar > .i { width:16px; height:16px; flex:none; }
+  .pvdel { flex:none; width:28px; height:28px; border-radius:8px; border:1px solid var(--line); background:transparent; color:var(--muted);
+    display:grid; place-items:center; cursor:pointer; transition:.15s; }
+  .pvdel:hover { color:#fff; border-color:#e5484d; background:rgba(229,72,77,.15); }
+  .pvdel .i { width:14px; height:14px; }
+  /* «Ход проверки» убран: остаётся только полоса прогресса (статус обработки — §4 ТЗ) */
+  #pending > h2, #pending .steps, #pendingNote { display:none !important; }
+  #pending { padding:14px 18px; }
+  #pending .progress { margin:0; }
+  /* страница никогда не уезжает вбок: ничто не шире экрана */
+  html, body { overflow-x:clip; max-width:100%; }
+  .hero, .work, .left, .right, .upload, .drop, .preview, .card { min-width:0; }
+  .hero > * { min-width:0; }
+  .hero { grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr) !important; align-items:stretch !important; }
+  .hero .upload { order:-1; }
+  .recent { background:rgba(0,0,0,.25); border:1px solid #3a2530; border-radius:24px; padding:18px; display:flex; flex-direction:column; gap:8px; min-height:0; }
+  .recent h3 { margin:0 0 6px; font-size:1rem; font-weight:700; color:#fff; }
+  .ritem { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:12px; text-decoration:none; color:var(--ink);
+    background:rgba(255,255,255,.03); border:1px solid transparent; font-size:.86rem; transition:.15s; }
+  .ritem:hover { border-color:#4a2536; background:rgba(224,54,127,.06); }
+  .ritem i { width:8px; height:8px; border-radius:50%; flex:none; } .ritem i.bad { background:#ff5a6e; } .ritem i.ok { background:#34d399; }
+  .ritem span { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .ritem b { font-size:.75rem; font-weight:600; color:var(--muted); white-space:nowrap; }
+  .rempty { color:var(--muted); font-size:.85rem; margin:auto 0; text-align:center; }
+  .player video, .preview video { background:transparent !important; }
+  .preview video { width:auto !important; max-width:100%; height:360px; margin:0 auto; }
+  .work { margin-top:0; }
+  @media (max-width: 760px) { .hero { grid-template-columns:minmax(0,1fr) !important; } .preview video { height:260px; } }
+  header .bar { display:flex; align-items:center; justify-content:space-between; }
+  .newchk { display:inline-flex; align-items:center; gap:6px; padding:7px 14px; border-radius:999px; border:1px solid #4a2536;
+    color:var(--accent); font-weight:600; font-size:.85rem; text-decoration:none; transition:.15s; }
+  .newchk:hover { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .newchk .i { width:16px; height:16px; }
+  .newchk[hidden] { display:none; }
+  .sect { font-size:1.6rem; font-weight:700; color:var(--accent); margin:26px 0 14px; letter-spacing:-.01em; }
+  @media (max-width: 760px) { .sect { font-size:1.3rem; margin:18px 0 10px; } }
+  /* логотип в левом краю, без лишнего отступа сверху */
+  header .bar { max-width:none; padding:12px 28px; }
+  main { padding-top:6px; }
+  .sect { margin:14px 0 14px !important; color:#fff !important; }
+  .sect em { font-style:normal; color:var(--accent); }
+  @media (max-width: 760px) { header .bar { padding:10px 16px; } .sect { margin:10px 0 10px !important; } }
+  /* цвета заголовка наоборот; меньше пустоты в баннере; отступ у «Что проверяет сервис» */
+  .sect { color:var(--accent) !important; }
+  .sect em { color:#fff; }
+  .hero { min-height:0 !important; padding:22px 24px !important; }
+  .types h2 { margin:0 0 16px !important; }
+  .types { margin-top:28px; }
+  .recent h3 { text-align:center; margin-bottom:4px; }
+  .flink { display:block; line-height:0; } .flink:hover .flogo { filter:brightness(1.2); }
+  /* без лишних подписей: только полоса прогресса, без текста на видео и подсказок под шкалой */
+  .slabel, #plabel, #kbd, .tsep { display:none !important; }
+  .tools { justify-content:center; gap:8px; }
+  #tback[hidden], #tfwd[hidden] { display:none; }
+  .share { display:flex; gap:8px; align-items:center; } .share input { flex:1; min-width:0; }
+  .decide { justify-content:flex-start !important; gap:8px; }
+  .decide .sp { display:none; }
+  .review { display:flex; align-items:center; gap:10px; }
+  .review .rtrack { flex:1; }
+  .allyes { flex:none; white-space:nowrap; }
+  .drop .hint { color:var(--muted); font-size:.75rem; opacity:.7; text-align:center; margin-top:10px; letter-spacing:.02em; }
+  .drop.has-file .hint { display:none; }
+  .pwatch { margin-top:10px; text-align:center; font-variant-numeric:tabular-nums; font-size:1.6rem; font-weight:700; color:#fff; letter-spacing:.04em; }
+  #pending .progress { display:block; }
+  .fchip { white-space:nowrap; }
+  .pwatch[hidden] { display:none; }
+  /* «Последние проверки»: список прокручивается внутри блока, тонкий белый ползунок */
+  #recentList { flex:1; min-height:0; overflow-y:auto; display:flex; flex-direction:column; gap:8px; padding-right:6px;
+    scrollbar-width:thin; scrollbar-color:rgba(255,255,255,.55) transparent; }
+  #recentList::-webkit-scrollbar { width:6px; }
+  #recentList::-webkit-scrollbar-track { background:transparent; }
+  #recentList::-webkit-scrollbar-thumb { background:rgba(255,255,255,.55); border-radius:6px; }
+  #recentList::-webkit-scrollbar-thumb:hover { background:#fff; }
+  /* оба блока одной высоты; зона загрузки растягивается и заполняет карточку без пустоты */
+  .hero { grid-auto-rows:380px; }
+  .hero .upload { display:flex; flex-direction:column; min-height:0; }
+  .hero .upload .drop { flex:1; min-height:0 !important; }
+  .hero .upload .drop.has-file { overflow:hidden; }
+  .hero .upload .preview video { height:auto !important; max-height:230px; }
+  .recent { min-height:0; overflow:hidden; }
+  @media (max-width: 760px) { .hero { grid-auto-rows:auto; } .recent { max-height:300px; } }
 </style>
 </head>
 <body>
 <header>
   <div class="bar">
-    <div class="logo">F</div>
-    <div class="brand"><b>ForteBank</b> <span>· контроль кассовой дисциплины</span></div>
-    <div class="pill"><i></i>Работает локально</div>
+    <a class="flink" href="https://forte.kz/ru" target="_blank" rel="noopener" title="forte.kz"><svg class="flogo" role="img" aria-label="Forte" width="88" height="26" viewBox="0 0 101 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24.2402 28.4943C22.4635 27.4919 21.067 26.0813 20.0506 24.2624C19.0341 22.4436 18.5273 20.3347 18.5273 17.9358C18.5273 15.537 19.0482 13.4647 20.0928 11.6318C21.1374 9.79881 22.5621 8.38821 24.3669 7.39994C26.1716 6.41167 28.1904 5.91895 30.4175 5.91895C32.6447 5.91895 34.6634 6.41167 36.4682 7.39994C38.273 8.38821 39.6977 9.79881 40.7423 11.6318C41.784 13.4647 42.3077 15.5679 42.3077 17.9358C42.3077 20.3037 41.7728 22.407 40.7 24.2399C39.6273 26.0729 38.1688 27.4919 36.3218 28.4914C34.4748 29.4938 32.4363 29.9921 30.2064 29.9921C27.9764 29.9921 26.0168 29.491 24.2402 28.4914V28.4943ZM33.6977 24.9185C34.7845 24.3272 35.6658 23.4375 36.3415 22.2521C37.0173 21.0668 37.3579 19.628 37.3579 17.9358C37.3579 16.2437 37.0341 14.8105 36.3838 13.6421C35.7334 12.4708 34.8746 11.5895 33.8019 10.9983C32.7291 10.407 31.5719 10.1085 30.3331 10.1085C29.0942 10.1085 27.9426 10.4042 26.884 10.9983C25.8253 11.5895 24.9863 12.4736 24.3669 13.6421C23.7474 14.8134 23.4349 16.2437 23.4349 17.9358C23.4349 20.4473 24.0768 22.3873 25.3608 23.7528C26.6447 25.1212 28.258 25.8054 30.2064 25.8054C31.448 25.8054 32.6109 25.5097 33.6977 24.9157V24.9185Z" fill="currentColor"></path><path d="M68.9682 10.2325V23.1391C68.9682 24.0147 69.1737 24.6426 69.582 25.0227C69.9902 25.4028 70.6885 25.5943 71.6768 25.5943H74.6388V29.6149H70.8293C68.6557 29.6149 66.9917 29.1081 65.8373 28.0917C64.6801 27.0753 64.1029 25.4253 64.1029 23.1419V10.2353H61.3521V6.29912H64.1029V0.499023H68.9682V6.2963H74.6388V10.2325H68.9682Z" fill="currentColor"></path><path d="M100.279 19.7547H82.4647C82.6055 21.6158 83.2953 23.1109 84.5369 24.2399C85.7786 25.369 87.3018 25.9321 89.1066 25.9321C91.7026 25.9321 93.5355 24.8453 94.6083 22.6745H99.8143C99.1076 24.8171 97.8321 26.574 95.9851 27.9424C94.1381 29.3108 91.8462 29.995 89.1094 29.995C86.8795 29.995 84.8861 29.4938 83.1207 28.4943C81.3582 27.4919 79.9757 26.0813 78.9734 24.2624C77.971 22.4436 77.4727 20.3347 77.4727 17.9358C77.4727 15.537 77.9597 13.4281 78.9311 11.6092C79.9053 9.79037 81.2737 8.38539 83.0362 7.39994C84.7988 6.41167 86.8232 5.91895 89.1094 5.91895C91.3957 5.91895 93.2709 6.39759 94.9912 7.35771C96.7115 8.31782 98.0517 9.66367 99.0118 11.3981C99.9691 13.1325 100.451 15.1287 100.451 17.3868C100.451 18.2624 100.394 19.0508 100.282 19.7575L100.279 19.7547ZM95.4135 15.8608C95.3854 14.0841 94.7491 12.6594 93.5102 11.5867C92.2685 10.514 90.7312 9.97901 88.8983 9.97901C87.2343 9.97901 85.8096 10.5083 84.6242 11.567C83.4389 12.6257 82.735 14.056 82.5097 15.8608H95.4163H95.4135Z" fill="currentColor"></path><path d="M14.8003 11.7568V17.0473C9.55487 17.0473 5.28082 21.3185 5.28082 26.5668V29.6104H-0.00683594V26.5668C-0.00683594 25.0379 0.226857 23.5654 0.657641 22.1773C1.51076 19.4377 3.13535 17.036 5.28082 15.2341C7.43756 13.418 10.118 12.2073 13.0575 11.861C13.629 11.7934 14.209 11.7597 14.8003 11.7597V11.7568Z" fill="currentColor"></path><path d="M18.5253 -0.00585938V5.28461H14.8003C10.5403 5.28461 6.92231 8.09738 5.71442 11.966C3.29865 13.3512 1.31086 15.3954 -0.00683594 17.8562V14.8013C-0.00683594 6.63609 6.63512 -0.00585938 14.8003 -0.00585938H18.5253Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M47.082 6.30859H51.9051V8.82729C53.4897 7.5134 55.4517 6.63716 57.5998 6.38461C58.0221 6.33393 58.4529 6.30859 58.8921 6.30859V10.2279C55.3385 10.2279 52.3869 12.8712 51.9051 16.2966V29.6244H47.082V6.30859Z" fill="currentColor"></path></svg></a>
+    <a class="newchk" id="newchk" href="./" hidden><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Новая проверка</a>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div>
-      <span class="eyebrow"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>AI-помощник проверяющего</span>
-      <h1>Проверка кассовой дисциплины <em>по видео</em></h1>
-      <p class="lead">Загрузите запись с камеры кассы — сервис найдёт признаки возможных нарушений, покажет момент на видео, кадры-доказательства и пункт норматива РК.</p>
-      <div class="chips">
-        <span class="chip"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Без облака и интернета</span>
-        <span class="chip"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Обычно 1–3 минуты</span>
-        <span class="chip"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>Таймкод и кадр</span>
-        <span class="chip"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></svg>Нормативы НБРК и АРРФР</span>
-      </div>
+  <h2 class="sect">Проверка кассовой дисциплины по <em>видео</em></h2>
+  <section class="hero" id="hero">
+    <div class="recent" id="recent"><h3>Последние проверки</h3><div id="recentList"></div></div>
+    <div hidden>
     </div>
 
     <div class="upload">
-      <h2>Новая проверка</h2>
       <div class="drop" id="drop" role="button" tabindex="0">
         <div class="dicon"><svg class="i" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></svg></div>
         <div>
-          <div class="big"><span class="mouse-only">Перетащите видео сюда или нажмите, чтобы выбрать</span><span class="touch-only">Нажмите, чтобы выбрать видео</span></div>
-          <div class="hint">Формат .mov или .mp4, до 200 МБ</div>
+          <div class="hint">.mov, .mp4 · до 200 МБ</div>
           <div class="fname" id="fname"></div>
+          <div class="preview" id="preview" hidden>
+            <video id="pv" muted playsinline preload="metadata"></video>
+            <div class="pvbar"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="13" height="14" rx="2"/><path d="M16 10l5-3v10l-5-3z"/></svg><span id="pvname"></span><button type="button" class="pvdel" id="pvdel" title="Убрать видео" aria-label="Убрать видео"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+          </div>
         </div>
         <input type="file" id="file" accept=".mov,.mp4,video/quicktime,video/mp4" hidden>
       </div>
       <button class="btn" id="go" disabled><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span id="gotext">Проверить</span></button>
       <div class="error" id="error" hidden></div>
-      <div class="privacy"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg>Видео обрабатывается на сервере банка и никуда не передаётся. Лица не распознаются.</div>
     </div>
   </section>
 
   <section class="work" id="work" hidden>
     <div class="left">
       <div class="card player" id="player" hidden>
-        <video id="video" controls preload="metadata" playsinline></video>
+        <div class="vwrap" id="vwrap">
+          <video id="video" controls preload="metadata" playsinline></video>
+          <div class="scan" id="scan" hidden><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i><b class="beam"></b>
+            <span class="slabel"><em></em><span id="scantext">AI анализирует запись</span></span></div>
+        </div>
         <div class="vwarn" id="vwarn" hidden>Браузер не может воспроизвести этот файл. Отметки нарушений и кадры-доказательства всё равно доступны.</div>
         <div class="tools" id="tools">
           <button class="tbtn" id="tprev" title="Предыдущее нарушение"><svg class="i" viewBox="0 0 24 24"><path d="M18 6l-8 6 8 6zM6 6v12"/></svg>Пред.</button>
-          <button class="tbtn" id="tback" title="Назад на 5 секунд">−5 с</button>
-          <button class="tbtn" id="tfwd" title="Вперёд на 5 секунд">+5 с</button>
+          <button class="tbtn" id="tback" title="Назад на 5 секунд" hidden>−5 с</button>
+          <button class="tbtn" id="tfwd" title="Вперёд на 5 секунд" hidden>+5 с</button>
           <button class="tbtn" id="tnext" title="Следующее нарушение">След.<svg class="i" viewBox="0 0 24 24"><path d="M6 6l8 6-8 6zM18 6v12"/></svg></button>
           <span class="tsep"></span>
-          <button class="tbtn speed on" data-r="1">1×</button>
-          <button class="tbtn speed" data-r="2">2×</button>
-          <button class="tbtn speed" data-r="4">4×</button>
+          <button class="tbtn" id="speedbtn" title="Скорость воспроизведения">1×</button>
         </div>
         <div class="timeline" id="timeline" title="Нажмите, чтобы перейти к моменту">
           <div class="tl-track"></div><div class="tl-played" id="tlplayed"></div>
@@ -308,7 +478,7 @@
           <div class="tip" id="tip" hidden></div>
         </div>
         <div class="tl-scale"><span>0:00</span><span id="tlend"></span></div>
-        <div class="kbd" id="kbd" hidden><span class="mouse-only">Наведите на номер — превью кадра, клик — переход · <kbd>←</kbd> <kbd>→</kbd> между нарушениями</span><span class="touch-only">Нажмите на номер, чтобы перейти к нарушению</span></div>
+        <div class="kbd" id="kbd" hidden><span class="mouse-only">Наведите на номер — превью · <kbd>←</kbd> <kbd>→</kbd> — переход</span><span class="touch-only">Нажмите на номер, чтобы перейти к нарушению</span></div>
       </div>
     </div>
 
@@ -316,12 +486,13 @@
       <div class="card pending" id="pending" hidden>
         <h2>Ход проверки</h2>
         <ol class="steps">
-          <li data-s="1"><span class="dot">1</span>Загрузка видео на сервер</li>
-          <li data-s="2"><span class="dot">2</span>Анализ: люди, предметы, зоны кассы, сверка с правилами</li>
-          <li data-s="3"><span class="dot">3</span>Результат с таймкодами, кадрами и нормативами</li>
+          <li data-s="1"><span class="dot">1</span>Загрузка</li>
+          <li data-s="2"><span class="dot">2</span>Анализ видео</li>
+          <li data-s="3"><span class="dot">3</span>Результат</li>
         </ol>
         <div class="progress" id="progress" hidden>
           <div class="ptrack" id="ptrack"><div class="pfill" id="pfill"></div></div>
+          <div class="pwatch" id="pwatch" hidden>0:00</div>
           <div class="plabel" id="plabel"></div>
         </div>
         <p id="pendingNote">Нажмите «Проверить», чтобы начать анализ.</p>
@@ -332,13 +503,10 @@
 
   <section class="types">
     <h2>Что проверяет сервис</h2>
-    <p>Каждый тип нарушения связан с пунктом нормативного акта Республики Казахстан.</p>
     <div class="tgrid" id="tgrid"></div>
-    <div class="principle">Принцип вывода: <span>Что видно на видео</span>→<span>Почему это может быть нарушением</span>→<span>Пункт норматива</span></div>
   </section>
 </main>
 
-<footer>Результат — подсказка для проверяющего, а не окончательное заключение. Решение о нарушении принимает человек.</footer>
 
 <div class="modal" id="modal" hidden>
   <button class="x" aria-label="Закрыть">×</button>
@@ -356,6 +524,19 @@ const GIVE_UP_SEC = 900;          // после этого перестаём ж
 // Оценка времени по настройкам analyzer.py: 1 кадр/с, не больше 60 кадров, ~1.6 с на кадр на CPU, потолок 200 с
 function estimateSec(d) { if (!(d > 0)) return 0; return Math.min(200, Math.min(60, Math.ceil(d)) * 1.6) + 8; }
 const video = $("video");
+
+/* Официальные тексты на adilet.zan.kz (ссылки сверены в laws/LAWS.md) */
+const LAWS = [
+  { re: /№\s*231\b/,             name: "НБРК № 231", url: "https://adilet.zan.kz/rus/docs/V1900019680" },
+  { re: /№\s*14\b/,              name: "НБРК № 14",  url: "https://adilet.zan.kz/rus/docs/V2000020075" },
+  { re: /№\s*53\b/,              name: "АРРФР № 53", url: "https://adilet.zan.kz/rus/docs/V2600038336" },
+  { re: /191-IV|легализации/i,     name: "Закон № 191-IV (ПОД/ФТ)", url: "https://adilet.zan.kz/rus/docs/Z090000191_" },
+];
+function lawsIn(text) { return LAWS.filter(l => l.re.test(text || "")); }
+function lawLinks(text) {
+  const ls = lawsIn(text); if (!ls.length) return "";
+  return `<div class="lawlinks">` + ls.map(l => `<a href="${l.url}" target="_blank" rel="noopener" title="Открыть текст акта на adilet.zan.kz" onclick="event.stopPropagation()"><svg class="i" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>${l.name}<span class="ext" aria-hidden="true">↗</span></a>`).join("") + `</div>`;
+}
 
 /* ---------- типы нарушений: иконка и цвет по названию типа из API ---------- */
 const ICONS = {
@@ -378,26 +559,28 @@ const KINDS = [   // порядок важен: проверяем более к
   { key: "key",      re: /ключ/i,                    icon: "key",    c: "#8a5a00" },
   { key: "safe",     re: /сейф/i,                    icon: "safe",   c: "#4a0221" },
   { key: "drink",    re: /напит|еда|кофе|стакан/i,   icon: "cup",    c: "#6d4c41" },
+  { key: "items",    re: /без хранения|присмотр|оставив|сумк|личные вещ/i, icon: "bag", c: "#7b2cbf" },
   { key: "cash",     re: /деньг|налич|купюр/i,       icon: "cash",   c: "#0e7c86" },
   { key: "visit",    re: /визит|без провер/i,        icon: "clock",  c: "#b7791f" },
-  { key: "items",    re: /ценност|присмотр|сумк|личн/i, icon: "bag", c: "#7b2cbf" },
 ];
 function kindOf(title) { return KINDS.find(k => k.re.test(title || "")) || { key: "other", icon: "alert", c: "#d32f2f" }; }
 function svg(name) { return `<svg class="i" viewBox="0 0 24 24">${ICONS[name] || ICONS.alert}</svg>`; }
 
 // Типы, которые сейчас распознаёт сервис (синхронно с JURY_README, раздел 4)
-const CATALOG = [
-  ["Рабочий компьютер оставлен незаблокированным", "Кассир ушёл, а на экране ноутбука открыто рабочее окно", "АРРФР № 53, п. 53, п. 71 пп. 9"],
-  ["Ценности оставлены без присмотра", "Кассир ушёл, на столе осталась инкассаторская сумка", "НБРК № 231, п. 20 ч. 2, п. 22"],
-  ["Постороннее лицо при обслуживании", "Пока клиент у стола, к кассе подходит ещё один человек", "НБРК № 231, п. 20 ч. 2, п. 75"],
-  ["Дверь кассы не закрыта", "После входа дверь остаётся открытой дольше 5 секунд", "НБРК № 14, п. 16 пп. 1"],
-  ["Ушёл, не убрав ценности в сейф", "Кассир встал и вышел за 3 секунды, не задержавшись у сейфа", "НБРК № 231, п. 20 ч. 2, п. 76"],
-  ["Деньги прошлого клиента на столе", "К кассе подходит новый клиент, а на столе уже лежат купюры", "НБРК № 231, п. 20 ч. 2"],
-  ["Операция без проверок (короткий визит)", "Посетитель уходит через 10 секунд — проверка и пересчёт маловероятны", "НБРК № 231, п. 7, п. 20 ч. 1"],
-  ["Напиток на рабочем месте с наличными", "На столе кассира устойчиво стоит стакан с напитком", "НБРК № 231, п. 12, п. 20 ч. 2"],
+const CATALOG = [   // [короткое название, полное название из API, норматив] — синхронно с JURY_README, раздел 4
+  ["Рабочий компьютер не заблокирован", "Рабочий компьютер оставлен незаблокированным", "АРРФР № 53, п. 53, п. 71 пп. 9"],
+  ["Ценности оставлены без хранения", "Кассир покинул рабочее место, оставив наличные без хранения под замком", "НБРК № 231, п. 20 ч. 2, п. 22"],
+  ["Посторонний в кассовой зоне", "Постороннее лицо в кассовой зоне", "НБРК № 231, п. 75"],
+  ["Дверь кассовой зоны открыта", "Дверь кассы не закрыта", "НБРК № 14, п. 16 пп. 1"],
+  ["Ценности не убраны в сейф при уходе", "Кассир покинул рабочее место, не убрав ценности в сейф (признаки)", "НБРК № 231, п. 20 ч. 2, п. 22"],
+  ["Наличные на столе при новом клиенте", "Наличные открыто оставлены на рабочем месте", "НБРК № 231, п. 20 ч. 2"],
+  ["Слишком короткий визит клиента", "Операция с посетителем проведена без проверок (признаки: слишком короткий визит)", "НБРК № 231, п. 7, п. 20 ч. 1"],
+  ["Напитки рядом с наличными", "Еда или напитки на рабочем месте с наличными", "НБРК № 231, п. 12, п. 20 ч. 2"],
 ];
-$("tgrid").innerHTML = CATALOG.map(([t, d, n]) => { const k = kindOf(t);
-  return `<div class="tcard" style="--c:${k.c}"><div class="vicon">${svg(k.icon)}</div><b>${t}</b><p>${d}</p><small>${n}</small></div>`; }).join("");
+$("tgrid").innerHTML = CATALOG.map(([t, d, n]) => { const k = kindOf(d);
+  const l = lawsIn(n)[0];
+  const chip = l ? `<a class="lawchip" href="${l.url}" target="_blank" rel="noopener" title="${n} — открыть на adilet.zan.kz"><svg class="lk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg><span>${n}</span></a>` : `<small>${n}</small>`;
+  return `<div class="tcard" style="--c:${k.c}" title="${d}"><div class="vicon">${svg(k.icon)}</div><b>${t}</b>${chip}</div>`; }).join("");
 
 function esc(s) { const d = document.createElement("div"); d.textContent = s == null ? "" : String(s); return d.innerHTML; }
 function fmt(t) {
@@ -429,9 +612,16 @@ function stage(n, note) {
     li.querySelector(".dot").textContent = n > 0 && s < n ? "✓" : s;
   });
   $("pendingNote").textContent = note || (n === 0 ? "Нажмите «Проверить», чтобы начать анализ." :
-    "Можно переключиться на другую вкладку: прогресс виден в её заголовке.");
+    "Прогресс виден и в заголовке вкладки.");
 }
-function setBusy(b) { busy = b; $("go").disabled = b || !file; $("gotext").textContent = b ? "Идёт проверка…" : (shownJob && shownJob.fromLink && file ? "Проверить заново" : "Проверить"); }
+function scanOn(on, text) {
+  const sc = $("scan"); if (!sc) return;
+  const show = on && !!video.getAttribute("src");
+  sc.hidden = !show;
+  if (show && text) $("scantext").textContent = text;
+  if (show) video.pause();
+}
+function setBusy(b) { if (!b) { clearInterval(window.__watch); $("pwatch").hidden = true; } busy = b; $("go").disabled = b || !file; $("gotext").textContent = b ? "Идёт проверка…" : (shownJob && shownJob.fromLink && file ? "Проверить заново" : "Проверить"); }
 
 /* ---------- выбор файла ---------- */
 const drop = $("drop"), input = $("file");
@@ -452,8 +642,10 @@ function pick(f) {
     showError(`Файл слишком большой: ${(f.size / 1048576).toFixed(0)} МБ. Максимум — ${MAX_MB} МБ.`); return;
   }
   file = f;
-  $("fname").textContent = `${f.name} · ${(f.size / 1048576).toFixed(1)} МБ`;
-  drop.classList.add("compact");
+  $("fname").textContent = "";
+  drop.classList.add("has-file");
+  $("preview").hidden = false;
+  $("pvname").textContent = `${f.name} · ${(f.size / 1048576).toFixed(1)} МБ`;
   if (shownJob && shownJob.fromLink) {
     const h = document.querySelector(".hintcard"); if (h) h.remove();   // результат по ссылке: файл только для плеера
   } else { $("result").hidden = true; violations = []; renderMarks(); stage(0); setTitle(""); }
@@ -463,9 +655,19 @@ function pick(f) {
   $("vwarn").hidden = true;
   duration = 0; $("tlend").textContent = "";
   video.src = objUrl; video.playbackRate = 1; setSpeedUi(1);
-  $("work").hidden = false; $("player").hidden = false;
-  $("work").classList.add("has-video");
+  $("pv").src = objUrl + "#t=0.5";
+  if (shownJob && shownJob.fromLink) { $("work").hidden = false; $("player").hidden = false; $("work").classList.add("has-video"); }
 }
+
+function unpick() {
+  if (busy) return;
+  file = null; showError("");
+  drop.classList.remove("has-file"); $("preview").hidden = true;
+  $("pv").removeAttribute("src"); $("pv").load();
+  if (!(shownJob && shownJob.fromLink)) { $("work").hidden = true; $("player").hidden = true; $("work").classList.remove("has-video"); }
+  setBusy(false);
+}
+$("pvdel").onclick = e => { e.stopPropagation(); unpick(); };
 
 /* ---------- плеер, панель управления и шкала событий ---------- */
 video.addEventListener("loadedmetadata", () => {
@@ -476,8 +678,8 @@ video.addEventListener("timeupdate", updateHead);
 video.addEventListener("seeked", updateHead);
 video.addEventListener("ratechange", () => setSpeedUi(video.playbackRate));
 
-function setSpeedUi(r) { document.querySelectorAll(".speed").forEach(b => b.classList.toggle("on", +b.dataset.r === r)); }
-document.querySelectorAll(".speed").forEach(b => b.onclick = () => { video.playbackRate = +b.dataset.r; setSpeedUi(+b.dataset.r); });
+function setSpeedUi(r) { $("speedbtn").textContent = `${r}×`; $("speedbtn").classList.toggle("on", r !== 1); }
+$("speedbtn").onclick = () => { const r = { 1: 2, 2: 4 }[video.playbackRate] || 1; video.playbackRate = r; setSpeedUi(r); };
 $("tback").onclick = () => seek(video.currentTime - 5);
 $("tfwd").onclick = () => seek(video.currentTime + 5);
 $("tprev").onclick = () => step(-1);
@@ -506,6 +708,12 @@ function updateHead() {
   const L = scaleLen(); const p = L ? Math.min(100, video.currentTime / L * 100) : 0;
   $("tlhead").style.left = p + "%"; $("tlplayed").style.width = p + "%";
 }
+let popMarks = false;
+function countUp(el, n) {
+  if (!el) return;
+  if (!n || matchMedia("(prefers-reduced-motion: reduce)").matches) { el.textContent = n; return; }
+  let k = 0; const t = setInterval(() => { el.textContent = ++k; if (k >= n) clearInterval(t); }, Math.max(60, 500 / n));
+}
 function renderMarks() {
   const L = scaleLen(), box = $("marks");
   box.innerHTML = "";
@@ -519,6 +727,7 @@ function renderMarks() {
     b.hidden = !!filterKey && k.key !== filterKey;
     b.setAttribute("aria-label", `${fmt(v.timecode_sec)} — ${v.type}`);
     b.onclick = e => { e.stopPropagation(); focusViolation(i, true); };
+    if (popMarks) { b.classList.add("pop"); b.style.animationDelay = (0.25 + i * 0.12) + "s"; }
     b.onmouseenter = () => showTip(i, b);
     b.onmouseleave = () => { $("tip").hidden = true; };
     box.appendChild(b);
@@ -578,6 +787,7 @@ function upload(f) {
       if (e.lengthComputable) {
         const p = Math.round(e.loaded / e.total * 100);
         progress(p < 100 ? `Загрузка видео… ${p}%` : "Видео загружено, запускаем анализ…", p);
+        scanOn(true, p < 100 ? `Загрузка · ${p}%` : "AI анализирует запись");
         setTitle(`⬆ ${p}%`);
       }
     };
@@ -601,8 +811,9 @@ function analysisProgress(el, est) {
     const p = Math.min(95, Math.round(el / est * 100));
     if (el < est) progress(`Анализ видео… ${fmt(el)} из ~${fmt(est)}, осталось около ${fmt(est - el)}`, p);
     else progress(`Анализ видео… ${fmt(el)}, почти готово`, 97);
+    scanOn(true, `AI анализирует запись · ${fmt(el)}`);
     setTitle(`⏳ ${el < est ? p : 97}%`);
-  } else { progress(`Анализ видео… ${fmt(el)} (обычно 1–3 минуты)`, null); setTitle(`⏳ ${fmt(el)}`); }
+  } else { progress(`Анализ видео… ${fmt(el)} (обычно 1–3 минуты)`, null); setTitle(`⏳ ${fmt(el)}`); scanOn(true, `AI анализирует запись · ${fmt(el)}`); }
 }
 
 async function poll(jobId, t0) {
@@ -632,40 +843,87 @@ $("go").onclick = async () => {
   showError(""); $("result").hidden = true;
   violations = []; filterKey = null; decisions = {}; renderMarks(); shownJob = null;
   setBusy(true);
+  $("work").hidden = false; $("player").hidden = false; $("work").classList.add("has-video");
+  $("hero").hidden = true; $("newchk").hidden = false; scrollTo({ top: 0 });
   const t0 = Date.now();
-  stage(1); progress("Загрузка видео… 0%", 0);
-  const target = innerWidth < 1050 ? $("pending") : $("work");
-  setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+  clearInterval(window.__watch); $("pwatch").textContent = "0:00"; $("pwatch").hidden = false;
+  window.__watch = setInterval(() => { $("pwatch").textContent = fmt((Date.now() - t0) / 1000); }, 250);
+  stage(1); progress("Загрузка видео… 0%", 0); scanOn(true, "Загрузка · 0%");
+
   try {
     const { job_id } = await upload(file);
     if (!job_id) throw new Error("сервер не вернул номер задачи");
     setJobInUrl(job_id);
+    saveVideo(job_id, file);
     stage(2);
     const j = await poll(job_id, Date.now());
     hideProgress();
     show(j, { secs: (Date.now() - t0) / 1000, jobId: job_id, name: file.name });
   } catch (e) {
-    hideProgress(); showError("Ошибка: " + e.message);
+    hideProgress(); scanOn(false); showError("Ошибка: " + e.message);
     stage(0, "Проверка не завершилась — причина указана в блоке «Новая проверка». Можно попробовать ещё раз."); setTitle("✕ Ошибка");
   }
   setBusy(false);
 };
 
 /* ---------- ссылка на результат: ?job=<id> открывает готовую проверку без ожидания ---------- */
+function loadRecent() { try { return JSON.parse(localStorage.getItem("recentChecks") || "[]"); } catch (e) { return []; } }
+function saveRecent(id, j, name, secs) {
+  let r = loadRecent().filter(x => x.id !== id);
+  const old = loadRecent().find(x => x.id === id);
+  r.unshift({ id, name: name || (old && old.name) || ("Проверка " + id), v: j.verdict, n: (j.violations || []).length, ts: Date.now(), secs: secs || (old && old.secs) || 0 });
+  try { localStorage.setItem("recentChecks", JSON.stringify(r.slice(0, 30))); } catch (e) {}
+  renderRecent();
+}
+function renderRecent() {
+  const r = loadRecent(), box = $("recentList"); if (!box) return;
+  box.innerHTML = r.length ? r.map(x => `<a class="ritem" href="?job=${encodeURIComponent(x.id)}"><i class="${x.v === "violation" ? "bad" : "ok"}"></i>` +
+    `<span>${esc(x.name)}</span><b>${x.v === "violation" ? "нарушений: " + x.n : "норма"}</b></a>`).join("")
+    : "";
+}
+setTimeout(renderRecent, 0);
+
 function setJobInUrl(id) {
   try { const u = new URL(location.href); u.searchParams.set("job", id); history.replaceState(null, "", u); } catch (_) {}
 }
 function jobLink(id) { const u = new URL(location.href); u.search = ""; u.hash = ""; u.searchParams.set("job", id); return u.toString(); }
 
+/* ---------- видео прошлых проверок хранится только в этом браузере (IndexedDB), на сервер не уходит повторно ---------- */
+function vdb() {
+  return new Promise((ok, bad) => { const r = indexedDB.open("cashcheck", 1);
+    r.onupgradeneeded = () => r.result.createObjectStore("videos");
+    r.onsuccess = () => ok(r.result); r.onerror = () => bad(r.error); });
+}
+async function saveVideo(id, f) {
+  try { const db = await vdb(); const tx = db.transaction("videos", "readwrite");
+    const st = tx.objectStore("videos"); st.put({ blob: f, name: f.name, ts: Date.now() }, id);
+    const keys = await new Promise(r => { const q = st.getAllKeys(); q.onsuccess = () => r(q.result); });
+    const keep = new Set([id].concat(loadRecent().map(x => x.id)).slice(0, 10));
+    keys.forEach(k => { if (!keep.has(k)) st.delete(k); });
+  } catch (_) {}
+}
+async function loadVideo(id) {
+  try { const db = await vdb();
+    const v = await new Promise(r => { const q = db.transaction("videos").objectStore("videos").get(id); q.onsuccess = () => r(q.result); q.onerror = () => r(null); });
+    if (!v) return null; const b = v.blob; try { b.name = v.name; } catch (_) {} return b;
+  } catch (_) { return null; }
+}
+
 async function openFromLink() {
   let id = null;
   try { id = new URLSearchParams(location.search).get("job"); } catch (_) {}
   if (!id) return;
-  setBusy(true); showError("");
-  stage(2, "Открываем сохранённый результат проверки…");
+  setBusy(true); showError("");   // открываем сохранённый результат без полосы прогресса
   try {
     const j = await poll(id, Date.now());
     hideProgress();
+    const blob = await loadVideo(id);           // видео этой проверки, сохранённое в этом браузере
+    if (blob && !file) {
+      file = new File([blob], blob.name || "video.mov", { type: blob.type || "video/quicktime" });
+      if (objUrl) URL.revokeObjectURL(objUrl);
+      objUrl = URL.createObjectURL(file); video.src = objUrl;
+      $("work").hidden = false; $("player").hidden = false; $("work").classList.add("has-video");
+    }
     show(j, { jobId: id, fromLink: true });
   } catch (e) {
     hideProgress(); stage(null); $("work").hidden = true;
@@ -684,6 +942,12 @@ function updateReview() {
   $("rtext").textContent = n ? `Проверено: ${done} из ${n}` + (done ? ` · подтверждено ${yes}` : "") : "";
   $("rfill").style.width = n ? (done / n * 100) + "%" : "0";
 }
+document.addEventListener("click", e => {
+  if (e.target.closest("#confirmAll")) {
+    violations.forEach((_, i) => { decisions[i] = "yes"; applyDecision(i); });
+    saveDecisions(); updateReview();
+  }
+});
 function applyDecision(i) {
   const card = document.querySelector(`.viol[data-i="${i}"]`); if (!card) return;
   card.classList.toggle("rejected", decisions[i] === "no");
@@ -706,7 +970,7 @@ function descHtml(text) {
   if (k < 0) return `<div class="desc">${esc(text)}</div>`;
   const seen = text.slice(0, k).trim(), why = text.slice(k + 7).trim();
   return `<div class="desc">${seen ? `<p><span class="lbl">Что видно:</span> ${esc(seen)}</p>` : ""}` +
-         `${why ? `<p><span class="lbl">Почему это может быть нарушением:</span> ${esc(why)}</p>` : ""}</div>`;
+         `${why ? `<p><span class="lbl">Почему:</span> ${esc(why)}</p>` : ""}</div>`;
 }
 let lastSecs = 0;
 function updateStats() {
@@ -714,10 +978,160 @@ function updateStats() {
   $("stDur").textContent = duration ? fmt(duration) : "—";
 }
 
+/* ---------- отчёт для печати / PDF (собирается в браузере, без интернета) ---------- */
+let lastResult = null;
+function reportHtml() {
+  const j = lastResult || {}, id = shownJob && shownJob.id || "";
+  const logo = (document.querySelector(".flogo") || {}).outerHTML || "Forte";
+  const vs = violations, ok = !vs.length;
+  const dec = i => decisions[i] === "yes" ? '<span class="d yes">✓ Подтверждено проверяющим</span>' : decisions[i] === "no" ? '<span class="d no">✕ Отмечено как «не нарушение»</span>' : '<span class="d">Решение не отмечено</span>';
+  const card = (v, i) => {
+    const t = v.description || "", k = t.indexOf("Почему:"), b = t.indexOf("Основание:");
+    const seen = k > 0 ? t.slice(0, k).trim() : t, why = k > 0 ? t.slice(k + 7, b > k ? b : undefined).trim() : "", law = b > 0 ? t.slice(b + 10).trim().replace(/\.$/, "") : "";
+    return `<section class="v"><div class="vh"><span class="n">${i + 1}</span><h3>${esc(v.type)}</h3><span class="tc">${fmt(v.timecode_sec)}</span></div>
+      <p><b>Что видно:</b> ${esc(seen)}</p>${why ? `<p><b>Почему:</b> ${esc(why)}</p>` : ""}${law ? `<p class="law"><b>Норматив:</b> ${esc(law)}</p>` : ""}
+      <div class="fr">${(v.evidence_frames || []).map(f => `<figure><img src="data:image/jpeg;base64,${f.image_base64}"><figcaption>${fmt(f.timestamp_sec)}</figcaption></figure>`).join("")}</div>${dec(i)}</section>`;
+  };
+  const when = new Date().toLocaleString("ru-RU");
+  return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Отчёт проверки ${esc(id)}</title><style>
+  @page { size:A4; margin:14mm; } * { box-sizing:border-box; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body { font-family:"Open Sans",Segoe UI,Arial,sans-serif; color:#f3e9ee; background:#0e0a0c; margin:0; padding:24px; font-size:12px; }
+  .top { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #3a2530; padding-bottom:12px; }
+  .top svg { color:#e0367f; height:26px; width:auto; } .top small { color:#a8939d; }
+  h1 { font-size:20px; margin:18px 0 6px; color:#e0367f; } h1 em { color:#fff; font-style:normal; }
+  .verdict { margin:14px 0; padding:14px 16px; border-radius:14px; font-weight:700; font-size:15px;
+    background:${ok ? "#0f2a1f" : "#3a0f1c"}; border:1px solid ${ok ? "#1f6b4a" : "#7a2340"}; color:${ok ? "#5ee3a6" : "#ff6b8a"}; }
+  .stats { display:flex; gap:10px; margin-bottom:10px; } .stats div { flex:1; background:#1a1216; border:1px solid #2e1f27; border-radius:10px; padding:8px 10px; }
+  .stats b { display:block; font-size:15px; color:#fff; } .stats span { color:#a8939d; font-size:11px; }
+  .v { background:#161013; border:1px solid #2e1f27; border-left:3px solid #e0367f; border-radius:12px; padding:12px 14px; margin:10px 0; break-inside:avoid; }
+  .vh { display:flex; align-items:center; gap:10px; } .vh h3 { flex:1; margin:0; font-size:14px; color:#fff; }
+  .n { width:22px; height:22px; border-radius:50%; background:#e0367f; color:#fff; display:grid; place-items:center; font-weight:700; font-size:11px; }
+  .tc { background:#2a1520; color:#ff8fb8; border-radius:8px; padding:2px 8px; font-weight:700; }
+  p { margin:6px 0; line-height:1.45; color:#e6d8df; } p b { color:#fff; } .law { color:#cdb9c3; }
+  .fr { display:flex; gap:8px; margin:8px 0; } figure { margin:0; } img { height:200px; border-radius:8px; display:block; }
+  figcaption { color:#a8939d; font-size:10px; text-align:center; margin-top:2px; }
+  .d { display:inline-block; margin-top:4px; font-size:11px; color:#a8939d; } .d.yes { color:#ff8fb8; } .d.no { color:#5ee3a6; }
+  .foot { margin-top:16px; color:#7d6a73; font-size:10px; border-top:1px solid #2e1f27; padding-top:8px; }
+  </style></head><body>
+  <div class="top">${logo}<small>Отчёт № ${esc(id)} · ${esc(when)}</small></div>
+  <h1>Проверка кассовой дисциплины <em>по видео</em></h1>
+  <div class="verdict">${ok ? "Нарушение не обнаружено" : "Обнаружены признаки возможных нарушений: " + vs.length}</div>
+  <div class="stats"><div><b>${vs.length}</b><span>нарушений</span></div><div><b>${duration ? fmt(duration) : "—"}</b><span>длительность видео</span></div>
+    <div><b>${file ? esc(file.name) : "—"}</b><span>файл</span></div></div>
+  ${vs.map(card).join("")}
+  <div class="foot">Сформировано локальным сервисом анализа видео (модели работают внутри сервиса, без облачных AI). Результат — признаки возможных нарушений для проверки человеком.</div>
+  <script>window.onload = () => setTimeout(() => window.print(), 300);<\/script></body></html>`;
+}
+/* PDF скачивается сразу: страницы рисуются на canvas, затем упаковываются в PDF (свой мини-писатель, без библиотек) */
+function loadImg(src) { return new Promise(r => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = src; }); }
+function wrap(ctx, text, maxW) {
+  const out = []; let line = "";
+  for (const w of String(text).split(/\s+/)) { const t = line ? line + " " + w : w;
+    if (ctx.measureText(t).width > maxW && line) { out.push(line); line = w; } else line = t; }
+  if (line) out.push(line); return out;
+}
+function pdfFromJpegs(pages, W, H) {
+  const enc = new TextEncoder(), parts = [], offs = []; let len = 0;
+  const push = v => { const b = typeof v === "string" ? enc.encode(v) : v; parts.push(b); len += b.length; };
+  const obj = (n, body) => { offs[n] = len; push(n + " 0 obj\n"); body(); push("\nendobj\n"); };
+  push("%PDF-1.4\n");
+  const n = pages.length, kids = pages.map((_, i) => (3 + i * 3) + " 0 R").join(" ");
+  obj(1, () => push("<< /Type /Catalog /Pages 2 0 R >>"));
+  obj(2, () => push("<< /Type /Pages /Kids [" + kids + "] /Count " + n + " >>"));
+  pages.forEach((pg, i) => {
+    const po = 3 + i * 3, im = po + 1, co = po + 2, cs = "q " + W + " 0 0 " + H + " 0 0 cm /Im0 Do Q";
+    obj(po, () => push("<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + W + " " + H + "] /Resources << /XObject << /Im0 " + im + " 0 R >> >> /Contents " + co + " 0 R >>"));
+    obj(im, () => { push("<< /Type /XObject /Subtype /Image /Width " + pg.w + " /Height " + pg.h + " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length " + pg.bytes.length + " >>\nstream\n"); push(pg.bytes); push("\nendstream"); });
+    obj(co, () => push("<< /Length " + cs.length + " >>\nstream\n" + cs + "\nendstream"));
+  });
+  const xref = len, total = 3 + n * 3;
+  push("xref\n0 " + total + "\n0000000000 65535 f \n" + offs.slice(1, total).map(o => String(o).padStart(10, "0") + " 00000 n \n").join(""));
+  push("trailer\n<< /Size " + total + " /Root 1 0 R >>\nstartxref\n" + xref + "\n%%" + "EOF");
+  return new Blob(parts, { type: "application/pdf" });
+}
+async function buildPdf() {
+  const PW = 1240, PH = 1754, M = 70, ACC = "#e0367f", BG = "#0e0a0c", FONT = '"Open Sans","Segoe UI",Arial,sans-serif';
+  const id = shownJob && shownJob.id || "", vs = violations, ok = !vs.length, pages = [];
+  const svgEl = document.querySelector(".flogo");
+  const logo = svgEl ? await loadImg("data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgEl.outerHTML.replace(/currentColor/g, ACC))) : null;
+  let c, x, y;
+  const newPage = () => {
+    if (c) pages.push(c);
+    c = document.createElement("canvas"); c.width = PW; c.height = PH; x = c.getContext("2d");
+    x.fillStyle = BG; x.fillRect(0, 0, PW, PH);
+    if (logo) x.drawImage(logo, M, 50, 150, 44);
+    x.fillStyle = "#a8939d"; x.font = "22px " + FONT; x.textAlign = "right";
+    x.fillText("Отчёт № " + id + " · " + new Date().toLocaleString("ru-RU"), PW - M, 80); x.textAlign = "left";
+    x.fillStyle = "#3a2530"; x.fillRect(M, 115, PW - 2 * M, 2); y = 160;
+  };
+  const room = h => { if (y + h > PH - 90) newPage(); };
+  const rr = (X, Y, w, h, r, fill, stroke) => { x.beginPath(); x.roundRect(X, Y, w, h, r); if (fill) { x.fillStyle = fill; x.fill(); } if (stroke) { x.strokeStyle = stroke; x.lineWidth = 2; x.stroke(); } };
+  const para = (label, text, color) => {
+    x.font = "24px " + FONT; const lines = wrap(x, label + " " + text, PW - 2 * M - 60);
+    lines.forEach((ln, k) => { room(36);
+      if (k === 0) { x.font = "bold 24px " + FONT; x.fillStyle = "#fff"; x.fillText(label, M + 30, y); const lw = x.measureText(label + " ").width;
+        x.font = "24px " + FONT; x.fillStyle = color || "#e6d8df"; x.fillText(ln.slice(label.length + 1), M + 30 + lw, y); }
+      else { x.font = "24px " + FONT; x.fillStyle = color || "#e6d8df"; x.fillText(ln, M + 30, y); }
+      y += 34; });
+  };
+  newPage();
+  x.font = "bold 40px " + FONT; x.fillStyle = ACC; const t1 = "Проверка кассовой дисциплины по "; x.fillText(t1, M, y + 10);
+  x.fillStyle = "#fff"; x.fillText("видео", M + x.measureText(t1).width, y + 10); y += 50;
+  rr(M, y, PW - 2 * M, 80, 20, ok ? "#0f2a1f" : "#3a0f1c", ok ? "#1f6b4a" : "#7a2340");
+  x.font = "bold 30px " + FONT; x.fillStyle = ok ? "#5ee3a6" : "#ff6b8a";
+  x.fillText(ok ? "Нарушение не обнаружено" : "Обнаружены признаки возможных нарушений: " + vs.length, M + 28, y + 51); y += 110;
+  const stats = [[String(vs.length), "нарушений"], [duration ? fmt(duration) : "—", "длительность видео"], [file ? file.name : "—", "файл"]];
+  const sw = (PW - 2 * M - 40) / 3;
+  stats.forEach(([v, l], i) => { const X = M + i * (sw + 20); rr(X, y, sw, 96, 16, "#1a1216", "#2e1f27");
+    x.font = "bold 30px " + FONT; x.fillStyle = "#fff"; x.fillText(wrap(x, v, sw - 40)[0], X + 20, y + 44);
+    x.font = "20px " + FONT; x.fillStyle = "#a8939d"; x.fillText(l, X + 20, y + 76); });
+  y += 140;
+  for (let i = 0; i < vs.length; i++) {
+    const v = vs[i], t = v.description || "", k = t.indexOf("Почему:"), b = t.indexOf("Основание:");
+    const seen = k > 0 ? t.slice(0, k).trim() : t, why = k > 0 ? t.slice(k + 7, b > k ? b : undefined).trim() : "", law = b > 0 ? t.slice(b + 10).trim().replace(/\.$/, "") : "";
+    if (i > 0) newPage(); else room(160);   // каждое нарушение — на своём листе
+    const top = y;
+    x.fillStyle = ACC; x.beginPath(); x.arc(M + 44, y + 6, 20, 0, 7); x.fill();
+    x.fillStyle = "#fff"; x.font = "bold 22px " + FONT; x.textAlign = "center"; x.fillText(String(i + 1), M + 44, y + 14); x.textAlign = "left";
+    x.font = "bold 28px " + FONT; x.fillText(wrap(x, v.type, PW - 2 * M - 260)[0], M + 80, y + 16);
+    rr(PW - M - 130, y - 18, 110, 42, 12, "#2a1520"); x.fillStyle = "#ff8fb8"; x.font = "bold 24px " + FONT; x.textAlign = "center"; x.fillText(fmt(v.timecode_sec), PW - M - 75, y + 12); x.textAlign = "left";
+    y += 60; para("Что видно:", seen); if (why) para("Почему:", why); if (law) para("Норматив:", law, "#cdb9c3");
+    const fr = v.evidence_frames || [], ims = await Promise.all(fr.map(f => loadImg("data:image/jpeg;base64," + f.image_base64)));
+    const fh = 380; room(fh + 70); y += 10; let fx = M + 30;
+    ims.forEach((im, j) => { if (!im) return; const fw = Math.round(im.width * fh / im.height);
+      x.save(); x.beginPath(); x.roundRect(fx, y, fw, fh, 14); x.clip(); x.drawImage(im, fx, y, fw, fh); x.restore();
+      x.fillStyle = "#a8939d"; x.font = "20px " + FONT; x.textAlign = "center"; x.fillText(fmt(fr[j].timestamp_sec), fx + fw / 2, y + fh + 26); x.textAlign = "left"; fx += fw + 16; });
+    y += fh + 64;
+    const d = decisions[i] === "yes" ? ["Подтверждено проверяющим", "#ff8fb8"] : decisions[i] === "no" ? ["Отмечено как «не нарушение»", "#5ee3a6"] : ["Решение не отмечено", "#a8939d"];
+    x.font = "22px " + FONT; x.fillStyle = d[1]; x.fillText(d[0], M + 30, y); y += 50;
+  }
+  pages.push(c);
+  const jp = await Promise.all(pages.map(cv => new Promise(r => cv.toBlob(bl => bl.arrayBuffer().then(ab => r({ bytes: new Uint8Array(ab), w: cv.width, h: cv.height })), "image/jpeg", 0.88))));
+  return pdfFromJpegs(jp, 595, 842);
+}
+document.addEventListener("click", async e => {
+  const btn = e.target.closest("#pdfbtn"); if (!btn) return;
+  btn.disabled = true; const old = btn.textContent; btn.textContent = "Готовим…";
+  try {
+    const blob = await buildPdf(), a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = "Forte_otchet_" + (shownJob && shownJob.id || "proverka") + ".pdf";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+  } catch (err) { showError("Не удалось собрать PDF: " + err.message); }
+  btn.disabled = false; btn.textContent = old;
+});
+
+
+function shortName(t) {   // короткое название типа для фильтра (из каталога), иначе — само название
+  const c = CATALOG.find(r => r[1] === t); const sn = c ? c[0] : t;
+  return sn.length > 30 ? sn.slice(0, 28) + "…" : sn;
+}
 function show(j, info) {
+  lastResult = j;
   info = info || {};
   shownJob = { id: info.jobId, fromLink: !!info.fromLink };
-  stage(null); $("work").hidden = false;
+  if (info.fromLink && !info.secs) { const r = loadRecent().find(x => x.id === info.jobId); if (r && r.secs) info.secs = r.secs; }
+  if (info.jobId) saveRecent(info.jobId, j, file ? file.name : null, info.secs);
+  stage(null); scanOn(false); $("work").hidden = false; $("hero").hidden = true; $("newchk").hidden = false;
   violations = (j.violations || []).slice().sort((a, b) => (+a.timecode_sec || 0) - (+b.timecode_sec || 0));
   filterKey = null; decisions = info.jobId ? loadDecisions(info.jobId) : {};
   lastSecs = info.secs || 0;
@@ -727,20 +1141,22 @@ function show(j, info) {
   const kinds = {}; violations.forEach(v => { const k = kindOf(v.type); (kinds[k.key] = kinds[k.key] || { k, n: 0, t: v.type }).n++; });
 
   let html = ok
-    ? `<div class="verdict ok"><span class="ico">✓</span><div>Нарушение не обнаружено<small>Видимых признаков нарушений по ${CATALOG.length} проверяемым типам не найдено</small></div></div>`
-    : `<div class="verdict bad"><span class="ico">!</span><div>Обнаружены признаки возможных нарушений: ${n}<small>Проверьте каждый фрагмент и отметьте решение</small></div></div>`;
+    ? `<div class="verdict ok"><span class="ico">✓</span><div>Нарушение не обнаружено<small>Проверено по ${CATALOG.length} типам нарушений</small></div></div>`
+    : `<div class="verdict bad"><span class="ico">!</span><div>Обнаружены признаки возможных нарушений: ${n}<small>Отметьте решение по каждому</small></div></div>`;
   html += `<div class="stats">
-      <div class="stat"><span>Нарушений</span><b>${n}</b></div>
+      <div class="stat"><span>Нарушений</span><b id="stN">0</b></div>
       <div class="stat"><span>Длительность видео</span><b id="stDur">${duration ? fmt(duration) : "—"}</b></div>
-      <div class="stat"><span>${info.fromLink ? "Проверка №" : "Анализ занял"}</span><b>${info.fromLink ? esc(info.jobId) : fmt(lastSecs)}</b></div>
+      <div class="stat"><span>Анализ занял</span><b>${lastSecs ? fmt(lastSecs) : "—"}</b></div>
     </div>`;
-  if (info.jobId) html += `<div class="share">Ссылка на результат:
+  if (info.jobId) html += `<div class="share">
       <input readonly value="${esc(jobLink(info.jobId))}" onclick="this.select()">
-      <button class="linkbtn" id="copylink">Копировать</button></div>`;
+      <button class="linkbtn" id="copylink">Копировать</button>
+      <button class="linkbtn" id="pdfbtn" title="Скачать отчёт в PDF">Отчёт PDF</button></div>`;
   if (info.fromLink && !file) html += `<div class="hintcard">Чтобы смотреть видео с отметками нарушений, выберите тот же видеофайл в блоке «Новая проверка». Повторный анализ не запустится.</div>`;
-  if (n) html += `<div class="review"><span id="rtext"></span><div class="rtrack"><div class="rfill" id="rfill"></div></div></div>`;
+  if (n) html += `<div class="review"><span id="rtext"></span><div class="rtrack"><div class="rfill" id="rfill"></div></div>` +
+    `<button class="dbtn allyes" id="confirmAll" type="button">Подтвердить все</button></div>`;
   if (Object.keys(kinds).length > 1) html += `<div class="filters"><button class="fchip on" data-k="">Все · ${n}</button>` +
-      Object.values(kinds).map(x => `<button class="fchip" data-k="${x.k.key}"><i style="background:${x.k.c}"></i>${esc(x.t.length > 34 ? x.t.slice(0, 32) + "…" : x.t)} · ${x.n}</button>`).join("") + `</div>`;
+      Object.values(kinds).map(x => `<button class="fchip" data-k="${x.k.key}"><i style="background:${x.k.c}"></i>${esc(shortName(x.t))} · ${x.n}</button>`).join("") + `</div>`;
 
   violations.forEach((v, i) => {
     const k = kindOf(v.type);
@@ -751,15 +1167,19 @@ function show(j, info) {
         <div class="vtitle"><small>Нарушение ${i + 1} из ${n}</small><h3>${esc(v.type)}</h3></div>
         <button class="tc" data-i="${i}" title="Перейти к моменту в видео">▶ ${fmt(v.timecode_sec)}</button></div>
       ${descHtml(text)}
-      ${norm ? `<div class="norm">${svg("law")}<div><b>Норматив:</b> ${esc(norm)}</div></div>` : ""}
+      ${norm ? `<div class="norm">${svg("law")}<div><b>Норматив:</b> ${esc(norm)}${lawLinks(norm)}</div></div>` : ""}
       ${frames.length ? `<div class="frames">` + frames.map((f, q) => `<figure>
           <img src="data:image/jpeg;base64,${f.image_base64}" data-i="${i}" data-k="${q}" alt="Кадр ${fmt(f.timestamp_sec)}" loading="lazy">
           <figcaption>${fmt(f.timestamp_sec)}</figcaption></figure>`).join("") + `</div>` : ""}
-      <div class="decide">Решение проверяющего:<span class="sp"></span>
+      <div class="decide">
         <button class="dbtn yes" data-i="${i}">✓ Подтверждаю</button><button class="dbtn no" data-i="${i}">✕ Не нарушение</button></div>
     </div>`;
   });
   box.innerHTML = html;
+  box.classList.remove("reveal"); void box.offsetWidth; box.classList.add("reveal");
+  box.querySelectorAll(".viol").forEach((el, q) => el.style.animationDelay = (0.15 + q * 0.09) + "s");
+  countUp($("stN"), n);
+  popMarks = true;
 
   const cb = $("copylink");
   if (cb) cb.onclick = async () => {
@@ -786,7 +1206,7 @@ function show(j, info) {
     box.querySelectorAll(".viol").forEach(el => el.hidden = !!filterKey && el.dataset.k !== filterKey);
     renderMarks();
   });
-  renderMarks();
+  renderMarks(); popMarks = false;
   violations.forEach((v, i) => applyDecision(i));
   updateReview();
   setTitle(ok ? "✓ Нарушений нет" : `! Нарушений: ${n}`);
@@ -816,7 +1236,31 @@ document.addEventListener("keydown", e => {
   if (tag === "input" || tag === "textarea" || tag === "video" || e.altKey || e.ctrlKey || e.metaKey) return;
   e.preventDefault(); step(e.key === "ArrowRight" ? 1 : -1);
 });
-openFromLink();
+/* ---------- демо-режим: файл открыт с диска (двойной щелчок) или адрес с ?demo ---------- */
+const DEMO_FRAME = "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCANQAdADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1GiiimaBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFABRSUUDFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooASiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKy9R8SaRpNyLa+u/KlKhgvlu3B+gPpQVGMpO0Vc1KKwf+E48Of8AQR/8gSf/ABNaenapZ6tbG5sZvOiDFC20ryPqB60FSpVIq8otfIt0Vj3nivRNPu5LW6vfLmjOGXynOOM9QMVD/wAJx4c/6CP/AJAk/wDiaLDVCq1dRf3G9RVdr+1XTv7RMuLXyhL5m0/cxnOMZ6Vn2fizQ7+6jtba+DzSHCKYnXJ+pGKCVTm02k9DYopskiRRtJIwVEBZiewFY0HjHQLm4jghv90krhEXyZBkk4A+7QEac5axVzboorIuvFehWcpjm1KLcOCEBfH/AHyDQKMJT0irmvRVHT9a0zVCRZXkUzAZKg4b8jzV6gUouLs0FFFFAgooooAKKKKA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kdNRXM/2vf8A/Pf/AMcX/Cj+17//AJ7/APji/wCFFg5kdNRXM/2vf/8APf8A8cX/AApyazeqwJkDgfwsowfyosHMjpKKr2d5Hew704YfeU9VNWKRQUUUUDCiiigBKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKx/EDHbAuTgliR+VbFY3iD/l3/4F/SmiZbGNRRRTMgooooAKKKKACiiigAooooAKKKKACiiigDU0Fj9skXJwY8kfiK3qwNC/4/X/AOuZ/mK36TNY7BRRRSKCiiigBKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKx/EH/Lv/wL+lbFY+v/APLv/wAC/pTRMtjGooopmQUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBp6F/x+v/1zP8xW9WDoX/H6/wD1zP8AMVvUmax2CiiikUFFFFACUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVj6//wAu/wDwL+lbFY+v/wDLv/wL+lNClsY9FFFMxCiiigAooooAKKKKACiiigAooooAKKKKANLQv+P1/wDrmf5it6sHQ/8Aj9f/AK5n+YrepM1jsFFFFIoKKKKACikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWsfXv+WH/Av6Vr1ka9/yw/4F/SmhS2MeiiimYhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAGlof/H6/wD1zP8AMVvVg6H/AMfr/wDXM/zFbtJmsdhaKSikULRSUUAFFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtZGvf8sP+Bf0rWrI17/lh/wAC/pTQpbGRRRRTMQooooAKzNR1byGMNvhnHDMeQv8A9erGp3JtrJmX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AUUUUAFFFFAGlF/qU/3RT6ZF/qU/3RTq71sZi0UlFMBaKSigBaKSigAopM0ZoAWikzRmgBaKTNGaAFqre/wfjVnNVr3+D8azq/Axrcq0UUVxlhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAaMX+qT/dFPpkX+qT/dFOzXetjMWikzRmmAtFJmjNAC0UmaM0AFFFFMAooooAKKKKACqt5/B+NWqq3n8H41lV+BjW5WooorjLCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA0Yv8AVJ/uinUyL/VJ/uin16C2MwooopgFFFFABRRRQAlFFFABRRRQAUUUUAFVrz+D8as1WvP4PxrKr8DGtytRRRXGWFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQBoRf6pP8AdFOpkf8Aqk/3RT69BbGYUUUUwCiiigAooooASiiigAooooAKKKKACq93/B+NWKrXf8H41lV+BjW5XooorjLCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAvx/wCqT/dFOpsf+qT/AHRTq9BbEBRRRTEFFFFABRRRQAUUlFAxaKSigBaKSigBagulygb0NTUEZGDUyXMrAZ9FSzQFDlRlf5VFXDKLi7MsKKKKQBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABQASQB1NABJwBk1bhh2Dc33v5VcIOTE2SqNqgDsMUtJRXaSLRSUUwFopKKAFopKKACiiigAooooAKKKKACiiigAppRSclQT9KdRSAb5af3F/Kjy0/uL+VOoosgG+Wn9xfyo8tP7i/lTqKLIBvlp/cX8qPLT+4v5U6iiyAb5af3F/Kjy0/uL+VOoosgG+Wn9xfyo8tP7i/lTqKLIBvlp/cX8qPLT+4v5U6iiyAb5af3F/Kjy0/uL+VOoosgG+Wn9xfyo8tP7i/lTqKLIBvlp/cX8qPLT+4v5U6iiyAb5af3F/Kjy0/uL+VOoosgG+Wn9xfyo8tP7i/lTqKLIBvlp/cX8qPLT+4v5U6iiyAb5af3F/Kjy0/uL+VOoosgG+Wn9xfyo8tP7i/lTqKLIBvlp/cX8qPLT+4v5U6iiyAb5af3F/Kjy0/uL+VOoosgG+Wn9xfyo8tP7i/lTqKLIBvlp/cX8qPLT+4v5U6iiyAb5af3F/Kjy0/uL+VOoosgEACjAAH0paKKACiiimAUUUUAFFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFAC0UlFABRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUALRSUUAFFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAtFJRQAUUlFAxaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigBaKSigAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAEooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAEooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAEoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgAoozRmgBKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKAFopKKACikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAWikooAKKKKBhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAlFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB//Z";
+function runDemo() {
+  const fr = t => ({ timestamp_sec: t, image_base64: DEMO_FRAME });
+  const j = { status: "done", verdict: "violation", violations: [
+    { type: "Дверь кассы не закрыта", timecode_sec: 4,
+      description: "С 4 с часть помещения у входа остаётся изменённой более 5 с при отсутствии людей в этой зоне — дверь, вероятно, не закрыта. Почему: Касса имеет отдельный вход с закрывающейся на замок дверью. Основание: Правила организации охраны и устройства помещений банков второго уровня (постановление Правления НБРК от 24.02.2020 № 14), п. 16 пп. 1.",
+      evidence_frames: [fr(4), fr(8)] },
+    { type: "Рабочий компьютер оставлен незаблокированным", timecode_sec: 21.5,
+      description: "Кассир покинул кадр, экран ноутбука светится открытым рабочим окном. Почему: Рабочая станция должна блокироваться при уходе сотрудника. Основание: Требования к обеспечению информационной безопасности банков (постановление Правления АРРФР от 03.04.2026 № 53), п. 53, п. 71 пп. 9.",
+      evidence_frames: [fr(21.5), fr(24), fr(26)] },
+    { type: "Постороннее лицо в кассовой зоне", timecode_sec: 45,
+      description: "Пока клиент у стола, к кассе подходит ещё один человек. Почему: В кассовой зоне при операции не должно быть посторонних. Основание: Правила кассовых операций (постановление Правления НБРК от 29.11.2019 № 231), п. 75 (по аналогии).",
+      evidence_frames: [fr(45)] } ] };
+  duration = 60; $("tlend").textContent = fmt(60);
+  video.poster = "data:image/jpeg;base64," + DEMO_FRAME; video.removeAttribute("controls");
+  $("tools").hidden = true; $("work").hidden = false; $("player").hidden = false; $("work").classList.add("has-video");
+  const note = document.createElement("div");
+  note.className = "error"; note.style.cssText = "background:#fff4d6;color:#7a5200;margin:18px 0 0";
+  note.textContent = "Демо-режим: пример результата на условных данных (кадры — заглушки). Для проверки своего видео откройте сервис.";
+  $("work").before(note);
+  show(j, { secs: 42, name: "пример.mov" });
+}
+const IS_DEMO = location.protocol === "file:" || /[?&]demo\b/.test(location.search);
+if (IS_DEMO) runDemo(); else openFromLink();
 </script>
 </body>
 </html>

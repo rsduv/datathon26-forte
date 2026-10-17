@@ -7,9 +7,11 @@
 ## 1. Адреса и доступ
 | Что | Значение |
 |---|---|
-| Веб-интерфейс | `https://<будет после деплоя>` |
-| API | `https://<будет после деплоя>/api/v1` |
-| API-ключ | передаётся жюри отдельно; заголовок `X-API-Key` |
+| Веб-интерфейс | https://irwbfkex6gddfv-7860.proxy.runpod.net |
+| API | `https://irwbfkex6gddfv-7860.proxy.runpod.net/api/v1` (POST `/analyze`, GET `/jobs/{job_id}`) |
+| API-ключ | передан жюри в форме сдачи; заголовок `X-API-Key` |
+| Код | https://github.com/rsduv/datathon26-forte |
+| Сервер | RunPod, 1× NVIDIA RTX 3090; модели работают внутри сервиса, без внешних AI-API |
 
 ## 2. Как пользоваться
 **Интерфейс:** открыть адрес → перетащить .mov → «Проверить» → статус «Анализ… N с» → результат:
@@ -17,9 +19,9 @@
 
 **API (два шага, как в ТЗ):**
 ```
-curl -X POST https://<адрес>/api/v1/analyze -H "X-API-Key: <ключ>" -F "file=@video.mov"
+curl -X POST https://irwbfkex6gddfv-7860.proxy.runpod.net/api/v1/analyze -H "X-API-Key: <ключ>" -F "file=@video.mov"
 # → {"job_id": "3f2a9c1e", "status": "processing"}
-curl https://<адрес>/api/v1/jobs/3f2a9c1e -H "X-API-Key: <ключ>"
+curl https://irwbfkex6gddfv-7860.proxy.runpod.net/api/v1/jobs/3f2a9c1e -H "X-API-Key: <ключ>"
 # → {"job_id": "...", "status": "done", "verdict": "violation"|"no_violation", "violations": [...]}
 ```
 Без верного ключа — `401`. Каждое нарушение: `type`, `timecode_sec`, `description`, `evidence_frames` (1–3 JPEG в base64).

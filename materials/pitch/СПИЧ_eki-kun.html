@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Спич eki-kun</title>
+<style>
+  :root{--bg:#0e0f12;--card:#17181d;--line:#2a2c33;--txt:#f3f3f5;--mut:#9a9ca6;--acc:#c21f6e;--acc2:#ff5fa2;--ok:#3ecf8e}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:19px/1.6 "Segoe UI",Inter,Arial,sans-serif}
+  .wrap{max-width:860px;margin:0 auto;padding:40px 20px 80px}
+  .hero{border-radius:22px;padding:40px 36px;background:linear-gradient(135deg,#7a1046 0%,#c21f6e 55%,#ff5fa2 100%);margin-bottom:28px}
+  .hero small{opacity:.85;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+  .hero h1{margin:8px 0 6px;font-size:40px;line-height:1.15}
+  .hero p{margin:0;opacity:.92}
+  .key{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:34px}
+  .key div{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc2);border-radius:14px;padding:16px 18px;font-weight:600}
+  .key span{display:block;color:var(--mut);font-weight:400;font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+  h2{font-size:15px;color:var(--acc2);text-transform:uppercase;letter-spacing:.12em;margin:44px 0 14px}
+  .block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px 26px;margin-bottom:16px;position:relative}
+  .block .t{position:absolute;top:22px;right:24px;font-size:13px;color:var(--mut);background:#22242b;border-radius:99px;padding:3px 12px}
+  .block h3{margin:0 0 12px;font-size:21px}
+  .block h3 b{color:var(--acc2);margin-right:8px}
+  .say{font-size:21px;line-height:1.65}
+  .say p{margin:0 0 12px}
+  .say strong{color:#fff;background:rgba(194,31,110,.35);padding:0 6px;border-radius:6px}
+  .act{color:var(--ok);font-size:15px;font-style:italic;margin:4px 0 12px}
+  .big{font-size:26px;font-weight:700;text-align:center;padding:18px;border:2px dashed var(--acc2);border-radius:14px;margin:12px 0}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+  .stats div{background:#22242b;border-radius:14px;padding:14px;text-align:center}
+  .stats b{display:block;font-size:30px;color:var(--acc2)}
+  .stats span{font-size:13px;color:var(--mut)}
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+  .qa .q{font-weight:700;margin-bottom:6px}
+  .qa .q::before{content:"❓ "}
+  .qa .a{color:#d9dae0}
+  .plus{columns:2;gap:24px;padding-left:0;list-style:none;margin:0}
+  .plus li{break-inside:avoid;margin-bottom:10px;padding-left:28px;position:relative}
+  .plus li::before{content:"✔";position:absolute;left:0;color:var(--ok);font-weight:700}
+  .short{border:1px solid var(--acc);}
+  footer{margin-top:40px;color:var(--mut);font-size:15px;text-align:center}
+  @media (max-width:640px){.key,.stats{grid-template-columns:1fr 1fr}.plus{columns:1}.hero h1{font-size:30px}}
+  @media print{body{background:#fff;color:#000}.block,.qa,.key div,.stats div{background:#fff;border-color:#ccc}.say strong{background:#ffd6e8;color:#000}.hero{color:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <small>DATATHON'26 · ForteBank · команда eki-kun</small>
+    <h1>Контроль кассовой дисциплины по видео</h1>
+    <p>Текст выступления: 2–3 минуты</p>
+  </div>
+
+  <div class="key">
+    <div><span>Фраза №1</span>«Кассир не видит, что за ним наблюдают. Система видит».</div>
+    <div><span>Фраза №2</span>«Ноль ложных тревог — если сервис сказал “нарушение”, ему можно верить».</div>
+  </div>
+
+  <h2>Выступление</h2>
+
+  <div class="block">
+    <span class="t">15 сек</span>
+    <h3><b>01</b>Вступление</h3>
+    <div class="say">
+      <p>Здравствуйте! Мы — команда <strong>eki-kun</strong>.</p>
+      <p>Мы сделали сервис, который сам просматривает запись с камеры кассы и сразу говорит проверяющему: <strong>есть нарушение или нет</strong>, на какой секунде, показывает кадр-доказательство и пункт норматива, который нарушен.</p>
+      <p>Всё работает <strong>локально, без облачного ИИ</strong> — поэтому сервис можно поставить прямо внутри банка.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="t">40 сек</span>
+    <h3><b>02</b>Демо</h3>
+    <div class="act">→ загрузить Х-33.mov на сайт</div>
+    <div class="say">
+      <p>Покажу на живом примере. Загружаем запись…</p>
+      <p>…и через несколько секунд — результат: <strong>дверь кассы не закрыта</strong>, начиная с 4-й секунды. Вот кадр.</p>
+      <p>Посмотрите: кассир сидит спиной к открытой двери и не видит, что за ней наблюдают.</p>
+      <div class="big">А система — видит.</div>
+      <div class="act">→ пауза 1–2 секунды, затем кликнуть по нарушению</div>
+      <p>Нажимаю на нарушение — видео само перематывается на нужный момент. Здесь описание и основание: <strong>Правила НБРК № 14, пункт 16</strong>. Отчёт можно сразу скачать в PDF.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="t">30 сек</span>
+    <h3><b>03</b>Как мы это сделали</h3>
+    <div class="say">
+      <p>Готовой модели «нарушение кассира» не существует. А обучить свою на 40 роликах нельзя — она просто запомнит ролики и ошибётся на новом видео.</p>
+      <p>Поэтому мы пошли как настоящий проверяющий: вручную разобрали все видео и сравнили пары <strong>«норма — нарушение»</strong>. В одном ролике кассир перед уходом блокирует компьютер, в другом — уходит и оставляет его открытым.</p>
+      <p>Нейросети находят людей и предметы — деньги, стакан, ноутбук, сумку. А наши правила решают, нарушение это или нет, и привязывают его к закону.</p>
+      <p><strong>8 типов нарушений</strong> — у каждого есть норма: НБРК № 231, НБРК № 14, АРРФР № 53.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="t">20 сек</span>
+    <h3><b>04</b>Результат</h3>
+    <div class="stats">
+      <div><b>0 / 19</b><span>ложных тревог</span></div>
+      <div><b>14 / 21</b><span>нарушений найдено</span></div>
+      <div><b>82%</b><span>верных вердиктов</span></div>
+      <div><b>5–38 с</b><span>на видео (лимит 5 мин)</span></div>
+    </div>
+    <div class="say">
+      <p>На 19 нормальных видео — <strong>ноль ложных тревог</strong>. Если наш сервис сказал «нарушение» — ему можно верить.</p>
+      <p>Перед сдачей мы прогнали все 40 видео через боевой сервер — <strong>ни одной ошибки</strong>.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <span class="t">15 сек</span>
+    <h3><b>05</b>Польза и финал</h3>
+    <div class="say">
+      <p>Что это даёт банку? Проверяющему больше не нужно смотреть час записи — <strong>он видит несколько кадров с объяснением и нормой</strong>.</p>
+      <p>Следующий шаг — камера с лучшим разрешением над кассой и дообучение на записях банка: тогда сервис увидит и ключ в сейфе, и удостоверение.</p>
+      <div class="big">Спасибо! Готовы ответить на вопросы.</div>
+    </div>
+  </div>
+
+  <h2>Если дали 1 минуту</h2>
+  <div class="block short">
+    <div class="say">
+      <p>Мы — eki-kun. Наш сервис сам смотрит запись кассы и показывает: нарушение, секунда, кадр и пункт закона. Всё локально, без облака.</p>
+      <p><em>(демо Х-33)</em> Дверь кассы не закрыта с 4-й секунды. <strong>Кассир не видит, что за ним наблюдают. Система видит.</strong></p>
+      <p>8 типов нарушений с нормами РК. Ноль ложных тревог, 82% верных вердиктов, секунды на видео. Проверяющий смотрит не час записи, а несколько кадров. Спасибо!</p>
+    </div>
+  </div>
+
+  <h2>Наши плюсы</h2>
+  <div class="block">
+    <ul class="plus">
+      <li>0 ложных тревог — сервису можно доверять</li>
+      <li>Каждое нарушение объяснено: секунда, кадр, норма</li>
+      <li>Полностью локально — данные не уходят из банка</li>
+      <li>Чистые лицензии (BSD, Apache) — для бизнеса</li>
+      <li>Быстро: секунды вместо 5 минут</li>
+      <li>Готовый продукт: сайт, API, PDF-отчёт</li>
+      <li>Честная оценка — без подгонки под ответы</li>
+      <li>Лица не распознаём — только «человек»</li>
+    </ul>
+  </div>
+
+  <h2>Вопросы жюри</h2>
+  <div class="qa"><div class="q">Почему ловите не все нарушения?</div><div class="a">Часть нарушений — очень мелкие детали: ключ в замке сейфа — 2–3 пикселя, купюра — 5–6. На таком разрешении их не видит никакая модель. Слабые правила мы сознательно не включили — они дали бы ложные тревоги. Решение — камера получше и дообучение на записях банка.</div></div>
+  <div class="qa"><div class="q">У других 99%, а у вас 82%</div><div class="a">Мы считали честно — по вердикту на всё видео, как в задании. Под учебные ролики не подгоняли: финальное видео снято под другим углом, и подогнанная модель там бы сломалась. Зато у нас ноль ложных тревог.</div></div>
+  <div class="qa"><div class="q">Почему не ChatGPT или большая нейросеть?</div><div class="a">Облако по условиям запрещено. Локальную модель Qwen мы проверили на всех 40 видео: быстрая, но выдумывает детали — описывала инкассатора, которого в кадре нет. Поэтому не включили.</div></div>
+  <div class="qa"><div class="q">А если камера под другим углом?</div><div class="a">Правила опираются на найденные объекты и их поведение, а не на координаты. В данных уже три ракурса, плюс проверяли на зеркальных и затемнённых копиях.</div></div>
+  <div class="qa"><div class="q">Это готовое решение?</div><div class="a">Нет. Нейросети — общие детекторы предметов. Вся логика нарушений, правила и привязка к законам написаны нами.</div></div>
+  <div class="qa"><div class="q">Почему не YOLO?</div><div class="a">Популярные версии — под лицензией AGPL, банку для коммерческого использования она не подходит.</div></div>
+  <div class="qa"><div class="q">Как внедрять дальше?</div><div class="a">Камера с лучшим разрешением над кассой, записи банка для дообучения детектора на деньги, ключ и удостоверение. Новые типы нарушений добавляются отдельными правилами.</div></div>
+  <div class="qa"><div class="q">Распознаёте лица?</div><div class="a">Нет. Не распознаём и не храним — система видит только «человек».</div></div>
+
+  <footer>Если сайт не грузится — включить запасное видео: «Покажу запись работы сервиса».<br>
+  Забыл текст — две фразы: «Кассир не видит — система видит» и «Ноль ложных тревог».</footer>
+</div>
+</body>
+</html>

@@ -6,34 +6,35 @@
 
 **Команда eki-kun:** Жумажанова Кундыз (капитан), Садуов Рамазан.
 
-> **После хакатона (18.10.2026):** проект прошёл в питчинг. Сервер RunPod отключён — адреса ниже больше не работают.
-> Запустить у себя: `service\run.bat` → http://127.0.0.1:8000. ТЗ, презентация и текст выступления — в [`materials/`](materials/) (раздел 9).
+> **После хакатона (18.10.2026):** проект прошёл в питчинг. Во время хакатона сервис работал на сервере RunPod (RTX 3090),
+> после хакатона сервер отключён — запускайте у себя (раздел 1). ТЗ, презентация и текст выступления — в [`materials/`](materials/) (раздел 9).
 
-## 1. Адреса и доступ
+## 1. Запуск
 | Что | Значение |
 |---|---|
-| Веб-интерфейс | https://irwbfkex6gddfv-7860.proxy.runpod.net |
-| API | `https://irwbfkex6gddfv-7860.proxy.runpod.net/api/v1` (POST `/analyze`, GET `/jobs/{job_id}`) |
-| API-ключ | передан жюри в форме сдачи; заголовок `X-API-Key` |
-| Код | https://github.com/rsduv/datathon26-forte |
-| Сервер | RunPod, 1× NVIDIA RTX 3090; модели работают внутри сервиса, без внешних ИИ-сервисов |
+| Windows, одним кликом | `service\run.bat` — ставит зависимости, открывает http://localhost:8000 |
+| Вручную | `cd service && pip install -r requirements.txt && uvicorn app:app --port 8000` |
+| Docker | `docker build -t cashcheck service && docker run -p 8000:7860 -e API_KEY=dev-key cashcheck` |
+| Сервер с GPU (RunPod) | `service/tools/runpod_start.sh` |
+| Веб-интерфейс | http://localhost:8000 |
+| API | `http://localhost:8000/api/v1` (POST `/analyze`, GET `/jobs/{job_id}`) |
+| API-ключ | переменная окружения `API_KEY` (по умолчанию `dev-key`); заголовок `X-API-Key` |
+
+Нужен Python 3.11. Веса моделей скачиваются при первом запуске, дальше интернет не нужен; модели работают внутри сервиса, без внешних ИИ-сервисов.
 
 ## 2. Как пользоваться
-**Интерфейс:** открыть адрес → перетащить .mov → «Проверить» → статус «Анализ… N с» → результат:
+**Интерфейс:** открыть http://localhost:8000 → перетащить .mov → «Проверить» → статус «Анализ… N с» → результат:
 «Нарушение не обнаружено» или «Обнаружены признаки возможных нарушений: K» с типом, таймкодом, описанием, нормой и кадрами.
 
 **API (два шага, как в ТЗ):**
 ```
-curl -X POST https://irwbfkex6gddfv-7860.proxy.runpod.net/api/v1/analyze -H "X-API-Key: <ключ>" -F "file=@video.mov"
+curl -X POST http://localhost:8000/api/v1/analyze -H "X-API-Key: dev-key" -F "file=@video.mov"
 # → {"job_id": "3f2a9c1e", "status": "processing"}
-curl https://irwbfkex6gddfv-7860.proxy.runpod.net/api/v1/jobs/3f2a9c1e -H "X-API-Key: <ключ>"
+curl http://localhost:8000/api/v1/jobs/3f2a9c1e -H "X-API-Key: dev-key"
 # → {"job_id": "...", "status": "done", "verdict": "violation"|"no_violation", "violations": [...]}
 ```
 Без верного ключа — `401`. Каждое нарушение: `type`, `timecode_sec`, `description`, `evidence_frames` (1–3 JPEG в base64).
-Обработка видео ≤ 5 мин: на сервере (RTX 3090) 5–38 с на видео вместе с загрузкой, на CPU примерно 20–90+ с.
-
-**Локальный запуск:** `service\run.bat` (Windows) или
-`cd service && pip install -r requirements.txt && uvicorn app:app --port 8000`; Docker — `service/Dockerfile`.
+Обработка видео ≤ 5 мин: на сервере с GPU (RTX 3090) 5–38 с на видео вместе с загрузкой, на CPU примерно 20–90+ с.
 
 ## 3. Архитектура и подход
 ```

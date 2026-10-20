@@ -2,6 +2,7 @@
 
 Сначала войти один раз: py -3.11 -c "from huggingface_hub import login; login()" (токен с правом Write).
 Затем: py -3.11 service/tools/deploy_hf.py   (необязательно: HF_SPACE=аккаунт/имя, API_KEY=свой ключ)
+Важно: с 2026 г. Docker Space на бесплатном CPU требует подписку Hugging Face PRO.
 Папка по умолчанию — service/ (берутся только файлы сервиса). Повторный запуск обновляет Space, ссылка та же.
 """
 import os
